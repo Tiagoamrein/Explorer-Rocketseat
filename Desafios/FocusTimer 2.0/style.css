@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 62.5%;
+  --hue: 240;
+  --primary-color: hsl(var(--hue), 6%, 21%);
+  --bg-button: hsl(var(--hue), 9%, 89%);
+  --bg-button-focus: hsl(194, 97%, 31%);
+  --ff-body: 'Roboto', sans-serif;
+}
+body{
+  color: var(--primary-color);
+
+  font-family: var(--ff-body); 
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 82rem;
+  margin:  auto;
+  padding: 20rem 0;
+  
+}
+
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  
+
+}
+svg path, button path{
+  fill: var(--primary-color);
+}
+
+
+.controls {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 17px;
+  margin-right: 1.92rem;
+}
+
+.timer {
+
+  font-size: 12.5rem;
+  color: #323238;
+
+}
+
+.ControlsTimer{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 55px;
+
+}
+.effects button {
+  width: 13.8rem;
+  height: 15.2rem;
+  border-radius: 2.4rem;
+  
+}
+.fire, .coffe-shop, .nature, .rain {
+  background: #E1E1E6;
+}
+
+.effects {
+  display: grid;
+  gap: 3.2rem;
+  grid-template-areas: "A B"
+  "C D";
+  
+  
+  border: none;
+}
+.onFocus {
+  background: var(--bg-button-focus);
+}
+
+.onFocus path {
+  fill: white;
+}
+
+
+
