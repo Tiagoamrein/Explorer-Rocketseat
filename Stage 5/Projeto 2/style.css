@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body{
+  background-color: #445199;
+  font-size: 1.6rem;
+  width: 1280px;
+  
+}
+ .card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  justify-content: center;
+  align-items: center;
+  
+ }
