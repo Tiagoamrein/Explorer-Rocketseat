@@ -4,7 +4,7 @@ const usersRoutes =  require("./user.routes")
 
 
 const routes = Router()
-routes.use("/",usersRoutes)
+routes.use("/users",usersRoutes)
 
 
 

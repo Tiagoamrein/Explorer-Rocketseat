@@ -7,6 +7,6 @@ const usersRoutes = Router()
 
 const UsersController = new usersController()
 
-usersRoutes.post("/movies", UsersController.create)
-
+usersRoutes.post("/", UsersController.create)
+usersRoutes.put("/", UsersController.update)
 module.exports = usersRoutes
