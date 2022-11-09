@@ -1,5 +1,3 @@
-const { default: knex } = require("knex");
-
 exports.up = knex => knex.schema.createTable('movie notes', table => {
   table.increments('id')
   table.text('title')
