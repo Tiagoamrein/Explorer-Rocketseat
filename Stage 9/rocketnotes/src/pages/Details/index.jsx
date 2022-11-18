@@ -1,11 +1,17 @@
 import React from "react";
 
+import { Header } from "../../components/Header";
+import { Button } from "../../components/Button";
+import { Container } from "./styles";
 export function Details(){
 
   return (
-    <div>
-    <h1>Hello world</h1>
-    <a>Aula sobre React</a>
-    </div>
+    <Container>
+    <Header/>
+
+    
+    <Button title="voltar"/>
+    </Container>
+    
   )
 }
