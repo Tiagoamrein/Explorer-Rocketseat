@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 
@@ -36,11 +37,12 @@ export const Title= styled.div`
 
 
 
-export const NewMovie=styled.button`
+export const NewMovie=styled(Link)`
     
 
     border: none;
     background-color: ${({theme}) => theme.COLORS.PINK};
+    color: ${({theme}) => theme.COLORS.BACKGROUND_600};
     display: flex;
     align-items: center;
     padding: 13.5px 32px;

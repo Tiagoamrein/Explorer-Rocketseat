@@ -9,6 +9,10 @@ export const Container= styled.div`
   width: 100%;
 
   padding: 24px 123px;
+
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: ${({theme})=> theme.COLORS.BACKGROUND_700};
   
 
   h1{
