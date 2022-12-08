@@ -1,7 +1,8 @@
 import { Header } from "../../components/Header";
-import {FiArrowLeft} from "react-icons/fi"
 import { Container,Input } from "./styles";
+import {FiArrowLeft} from "react-icons/fi"
 import { Link } from "react-router-dom";
+import {TagItem} from "../../components/TagItem"
 
 import { Textarea } from "../../components/Textarea";
 export function NewMovie(){
@@ -22,7 +23,13 @@ export function NewMovie(){
         <Textarea placeholder="Observações"/>
 
         <h2>Marcadores</h2>
-      </main></section>
+        <div className="tags">
+        <TagItem value="React"/>
+        <TagItem value="Novo marcador" isNew/>
+        
+        </div>
+      </main>
+      </section>
     </Container>
   )
 }

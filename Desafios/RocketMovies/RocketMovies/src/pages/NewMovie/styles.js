@@ -4,11 +4,12 @@ export const Container= styled.div`
 width: 100%;
 height: 100vh;
 
+
  .Link { 
     font-size: 16px;
     display: flex;
     align-items: center;
-    margin-top: 40px;
+    margin: 40px 123px;
     color: ${({theme})=> theme.COLORS.PINK};
   svg{
     margin-right: 8px;
@@ -18,6 +19,13 @@ height: 100vh;
     margin-top: 24px;
     font-weight: 500;
     font-size: 28px;
+    margin: 40px 123px;
+  }
+
+  main{
+    margin: 40px 123px;
+    grid-area: content;
+    overflow-y: auto;
   }
   .inputs{
     
@@ -25,9 +33,15 @@ height: 100vh;
     flex-direction: row;
     justify-content: space-between;
     
-    margin: 40px 126px 40px 0px;
+    margin-bottom: 40px;
     
   }
+.tags{
+  display:flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  border-radius: 10px;
+}
 
 `
 
@@ -35,7 +49,8 @@ export const Input= styled.input`
   display: flex;
   
   padding: 18px 16px;
-  width: 536.5px;
+  width: 504.5px;
+  
   height: 55px;
   border: none;
   border-radius:10px;
