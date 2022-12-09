@@ -2,7 +2,7 @@ import {Container, NewMovie, Title} from "./styles"
 import {FiPlus} from "react-icons/fi"
 import { Header } from "../../components/Header"
 import { Movies } from "../../components/Movies"
-import { Button } from "../../components/Button"
+
 import { Link } from "react-router-dom"
 export function Home(){
   return(
@@ -20,10 +20,11 @@ export function Home(){
     
     </Title>
     <main>
+    <Link to= "/MoviePreview">
     <Movies/>
     <Movies/>
     <Movies/>
-      
+     </Link> 
       </main>
     </Container>
   )

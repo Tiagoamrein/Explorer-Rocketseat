@@ -3,6 +3,7 @@ import { Container,Input } from "./styles";
 import {FiArrowLeft} from "react-icons/fi"
 import { Link } from "react-router-dom";
 import {TagItem} from "../../components/TagItem"
+import { Button } from "../../components/Button";
 
 import { Textarea } from "../../components/Textarea";
 export function NewMovie(){
@@ -26,7 +27,11 @@ export function NewMovie(){
         <div className="tags">
         <TagItem value="React"/>
         <TagItem value="Novo marcador" isNew/>
-        
+        <section>
+        <Button title="Excluir filme"/>
+        <Button title="Salvar alterações"/>
+        </section>
+       
         </div>
       </main>
       </section>

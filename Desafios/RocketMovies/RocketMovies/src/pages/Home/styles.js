@@ -13,10 +13,17 @@ export const Container= styled.div`
     "header"
     "title"
     "content";
+
+    
   > main {
     grid-area: content;
     overflow-y: auto;
     padding: 4rem 0;
+
+    a{
+      text-decoration: none;
+      color: ${({theme}) => theme.COLORS.WHITE};
+    } 
   }
  
 `;
@@ -39,7 +46,7 @@ export const Title= styled.div`
 
 export const NewMovie=styled(Link)`
     
-
+    
     border: none;
     background-color: ${({theme}) => theme.COLORS.PINK};
     color: ${({theme}) => theme.COLORS.BACKGROUND_600};
