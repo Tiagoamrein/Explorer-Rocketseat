@@ -54,6 +54,7 @@ export const NewMovie=styled(Link)`
     align-items: center;
     padding: 13.5px 32px;
     width: 220px;
+    margin-right: 30px;
     height: 48px;
     border-radius: 10px;
     gap: 8px;

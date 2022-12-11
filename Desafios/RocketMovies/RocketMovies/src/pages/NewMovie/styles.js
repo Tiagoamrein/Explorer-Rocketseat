@@ -26,10 +26,12 @@ height: 100vh;
     margin: 40px 123px;
     grid-area: content;
     overflow-y: auto;
-  }
-  h2{
+    
+    h2{
     margin-top: 30px;
   }
+  }
+ 
   .inputs{
     
     display: flex;
@@ -66,9 +68,6 @@ height: 100vh;
       color: ${({theme})=> theme.COLORS.PINK};
     }
   }
-  
-
- 
 }
 
 `
