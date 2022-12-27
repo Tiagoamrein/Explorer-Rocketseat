@@ -2,6 +2,7 @@ const { hash, compare } = require('bcryptjs')
 const AppError = require('../utils/AppError')
 const sqliteConnection = require('../database/sqlite')
 const { application } = require('express')
+const knex = require('../database/knex')
 
 class UserController {
   /* 
@@ -86,6 +87,15 @@ class UserController {
     )
 
     return response.json()
+  }
+
+  async delete (request, response){
+    const {id} = request.params
+  
+    const user = await knex("users").where({ id }).delete();
+    
+    return response.status(202).json()
+  
   }
 }
 
