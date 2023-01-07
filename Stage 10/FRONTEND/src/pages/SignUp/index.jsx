@@ -2,7 +2,7 @@ import { Container, Form, Background} from "./styles";
 import {FiMail, FiLock, FiUser} from "react-icons/fi"
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { api } from "../../services/api";
+import { api } from "../../services/api.js";
 import {Input} from "../../components/Input"
 import {Button} from "../../components/Button"
 
@@ -46,7 +46,12 @@ export function SignUp(){
 
         <Input placeholder= "E-mail" type ="text" icon = {FiMail} onChange={ e => setEmail(e.target.value)}/>
 
-        <Input placeholder= "Senha" type ="password" icon = {FiLock}onChange={ e => setPassword(e.target.value)}/>
+        <Input
+          placeholder={'Senha'}
+          type={'password'}
+          icon={FiLock}
+          onChange={(e)=> setPassword(e.target.value)}
+        />
 
         <Button title="Cadastrar" onClick={handlerSignUp}/>
         <Link to="/">
