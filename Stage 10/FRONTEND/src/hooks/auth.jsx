@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import { json } from "react-router-dom";
 import { api } from "../services/api";
 
  const AuthContext = createContext({})
@@ -11,6 +12,9 @@ import { api } from "../services/api";
     try{
       const response  = await api.post("/sessions", {email, password})
       const {user, token} = response.data
+
+      localStorage.setItem("@rocketnote:user", JSON.stringify(user))
+      localStorage.setItem("@rocketnote:token", token)
 
       api.defaults.headers.authorization = `Bearer ${token}`
       setData({user, token})
@@ -25,9 +29,32 @@ import { api } from "../services/api";
 
     }
   }
+  
+  function signOut(){
+    const token = localStorage.removeItem("@rocketnote:token")
+    const user = localStorage.removeItem("@rocketnote:user")
+    
+
+    setData({})
+
+  }
+
+  useEffect(() =>{
+    const token = localStorage.getItem("@rocketnote:token")
+    const user = localStorage.getItem("@rocketnote:user")
+
+    if(token && user){
+      api.defaults.headers.authorization = `Bearer ${token}`
+
+      setData({
+        token,
+        user: JSON.parse(user)
+      })
+    }
+  },[])
 
   return(
-    <AuthContext.Provider value={{signIn, user: data.user}}>
+    <AuthContext.Provider value={{signIn, user: data.user,signOut}}>
       {children}
     </AuthContext.Provider>
   )
