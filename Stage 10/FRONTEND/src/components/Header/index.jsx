@@ -8,7 +8,7 @@ export function Header(){
   const {signOut} = useAuth()
   return(
     <Container>
-      <Profile to="/Profile">
+      <Profile to="/profile">
         <img src="https://github.com/tiagoamrein.png" alt="Foto do usuario" />
 
         <div>

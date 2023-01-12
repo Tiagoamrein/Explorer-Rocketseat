@@ -16,7 +16,8 @@ import { api } from "../services/api";
       localStorage.setItem("@rocketnote:user", JSON.stringify(user))
       localStorage.setItem("@rocketnote:token", token)
 
-      api.defaults.headers.authorization = `Bearer ${token}`
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`
+
       setData({user, token})
 
       
@@ -44,7 +45,8 @@ import { api } from "../services/api";
     const user = localStorage.getItem("@rocketnote:user")
 
     if(token && user){
-      api.defaults.headers.authorization = `Bearer ${token}`
+      
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
       setData({
         token,
