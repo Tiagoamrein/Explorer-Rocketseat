@@ -40,6 +40,25 @@ import { api } from "../services/api";
 
   }
 
+   async function updateProfile ({user}){
+    try {
+
+      await api.put("/users", user)
+      localStorage.setItem("@rocketnote:user", JSON.stringify(user))
+
+      setData({user, token: data.token})
+      alert("Perfil atualizado")
+      
+    } catch(error){
+      if(error.response){
+        alert(error.response.data.message)
+      }else{
+        alert("Não foi possivel atualizar.")
+      }
+
+    }
+
+   }
   useEffect(() =>{
     const token = localStorage.getItem("@rocketnote:token")
     const user = localStorage.getItem("@rocketnote:user")
@@ -56,7 +75,7 @@ import { api } from "../services/api";
   },[])
 
   return(
-    <AuthContext.Provider value={{signIn, user: data.user,signOut}}>
+    <AuthContext.Provider value={{signIn, user: data.user,signOut, updateProfile}}>
       {children}
     </AuthContext.Provider>
   )

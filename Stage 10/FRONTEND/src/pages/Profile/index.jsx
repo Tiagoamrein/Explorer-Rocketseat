@@ -7,12 +7,25 @@ import {Button} from "../../components/Button"
 import { useAuth } from "../../hooks/auth"
 export function Profile(){
 
-const {user} = useAuth() 
+const {user, updateProfile} = useAuth() 
 
 const [name, setName] = useState(user.name)
 const [email, setEmail] = useState(user.email)
 const [passwordold, setPasswordold] = useState()
 const [passwordNew, setPasswordNew] = useState()
+
+  async function handlerUpdate(){
+
+    const user = {
+      name,
+      email,
+      password: passwordNew,
+      old_password: passwordold,
+    }
+
+    await updateProfile({user})
+  }
+
 
   return(
     <Container>
@@ -44,7 +57,7 @@ const [passwordNew, setPasswordNew] = useState()
 
       <Input placeholder= "Nova senha" type ="password" icon = {FiLock} autoComplete="true" onChange={ e => setPasswordold(e.target.value)}/>
 
-      <Button title= "Salvar"/>
+      <Button title= "Salvar" onClick= {handlerUpdate}/>
       </Form>
     </Container>
   )
