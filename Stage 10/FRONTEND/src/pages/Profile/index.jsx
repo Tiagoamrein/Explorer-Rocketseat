@@ -53,9 +53,9 @@ const [passwordNew, setPasswordNew] = useState()
 
       <Input placeholder= "Email" type ="email" icon = {FiMail} value={email} onChange={ e => setEmail(e.target.value)}/>
 
-      <Input placeholder= "Senha atual" type ="password" icon = {FiLock} autoComplete="true" onChange={ e => setPasswordNew(e.target.value)}/>
+      <Input placeholder= "Senha atual" type ="password" icon = {FiLock} autoComplete="true" onChange={ e => setPasswordold(e.target.value)}/>
 
-      <Input placeholder= "Nova senha" type ="password" icon = {FiLock} autoComplete="true" onChange={ e => setPasswordold(e.target.value)}/>
+      <Input placeholder= "Nova senha" type ="password" icon = {FiLock} autoComplete="true" onChange={ e => setPasswordNew(e.target.value)}/>
 
       <Button title= "Salvar" onClick= {handlerUpdate}/>
       </Form>
