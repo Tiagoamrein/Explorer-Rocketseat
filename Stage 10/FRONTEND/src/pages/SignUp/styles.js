@@ -1,47 +1,63 @@
 import styled from "styled-components";
-import BackgroundImg from "../../assets/background.png"
-export const Container= styled.div`
+
+import backgroundImg from '../../assets/background.webp'
+
+export const Container = styled.div`
   height: 100vh;
+
   display: flex;
   align-items: stretch;
+`;
 
+export const Form = styled.form`
+  padding: 0 135px;
 
-`
-export const Form= styled.form`
-  padding: 0 136px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   text-align: center;
-
-  >h1{
+  
+  > h1 {
     font-size: 48px;
-    color: ${({theme})=> theme.COLORS.ORANGE};
+    font-weight: 700;
+    color: ${({theme}) => theme.COLORS.ORANGE}
   }
-  >h2{
-    font-size: 24px;
-    margin: 48px 0;
-  }
-  >p{
+
+  > p {
     font-size: 14px;
-    color: ${({theme})=> theme.COLORS.GRAY_100};
+    color: ${({theme}) => theme.COLORS.GRAY_100};
+
+    margin-bottom: 48px;
   }
-  >a{
+
+  > h2 {
+    font-size: 24px;
+    font-weight: 500;
+
+    margin-bottom: 48px;
+  }
+
+  > button {
+    margin-top: 24px;
+  }
+
+  > a {
+    color: ${({theme}) => theme.COLORS.ORANGE};
     margin-top: 124px;
-    color: ${({theme})=> theme.COLORS.ORANGE};
-  }
+  } 
+`;
 
-  >button{
-    margin-top:24px;
-  }
-
-`
-
-export const Background= styled.div`
+export const Background = styled.div`
   flex: 1;
-  background: url(${BackgroundImg}) no-repeat center center;
+  opacity: 0.5;
+  background: 
+    radial-gradient(rgba(0,0,0,.3),
+    rgba(0,0,0,.6), 
+    rgba(0,0,0,.8), rgb(0,0,0)),
+    url(${backgroundImg});
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
-
-`
+`;
