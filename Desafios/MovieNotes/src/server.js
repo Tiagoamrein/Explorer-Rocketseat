@@ -3,14 +3,19 @@ const express = require ("express")
 const routes = require("./routes")
 const AppError = require("./utils/AppError")
 const bodyParser = require('body-parser')
-
-
+const uploadConfig = require("./configs/upload");
+const cors = require('cors')
 const app = express()
 
 app.use(bodyParser.json());
 app.use(express.json())
 app.use(routes)
 
+
+
+
+app.use("/files", express.static(uploadConfig.UPLOADS_FOLDER));
+app.use(cors())
 
 
 app.use((error, request, response, next) => {
@@ -28,7 +33,7 @@ app.use((error, request, response, next) => {
   })
 })
 
-const PORT = 3333;
+const PORT = 3000;
 
 
 app.listen (PORT ,() => console.log (`servir is runnig on PORT ${PORT}`))
