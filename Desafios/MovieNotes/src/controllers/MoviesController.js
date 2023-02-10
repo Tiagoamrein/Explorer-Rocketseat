@@ -3,7 +3,7 @@ const knex = require('../database')
 class MoviesController {
   async create(request, response) {
     const { title, description,rating, tags} = request.body;
-    const {user_id} = request.params;
+    const user_id = request.user.id;
 
     const note_id = await knex("movie notes").insert({
       title,
@@ -47,7 +47,7 @@ class MoviesController {
     return response.json()
   }
   async index(request, response){
-    const {user_id} = request.query
+    const user_id = request.user.id;
 
     const notes = await knex("movie notes").where({user_id}).orderBy("title")
 
