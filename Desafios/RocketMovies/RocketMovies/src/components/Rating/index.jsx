@@ -1,19 +1,14 @@
-import { TiStarOutline, TiStarFullOutline } from "react-icons/ti";
-import { Container } from "./styles";
-export function Rating({ rate }) {
-  const stars = [];
+import { Container } from './styles';
+import { VscStarFull, VscStarEmpty } from 'react-icons/vsc';
 
-  for (let i = 0; i < 5; i++) {
-    let star = i < rate ? TiStarFullOutline : TiStarOutline;
-
-    stars.push(star);
-  }
-
-  return (
-    <Container>
-      {stars.map((Star, i) => (
-        <Star key={i} />
-      ))}
-    </Container>
-  );
+export function StarsRating({ rating }) {
+    return (
+        <Container>
+          <span>{rating >= 1 ? <VscStarFull /> : <VscStarEmpty />}</span>
+          <span>{rating >= 2 ? <VscStarFull /> : <VscStarEmpty />}</span>
+          <span>{rating >= 3 ? <VscStarFull /> : <VscStarEmpty />}</span>
+          <span>{rating >= 4 ? <VscStarFull /> : <VscStarEmpty />}</span>
+          <span>{rating >= 5 ? <VscStarFull /> : <VscStarEmpty />}</span>
+        </Container>
+    )
 }

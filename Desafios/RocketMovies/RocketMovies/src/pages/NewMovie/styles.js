@@ -39,7 +39,18 @@ height: 100vh;
     justify-content: space-between;
     
     margin-bottom: 40px;
-    
+    select{
+      display: flex;
+
+      padding: 18px 16px;
+      width: 504.5px;
+      font-size: 15px;
+      height: 55px;
+      border: none;
+      border-radius:10px;
+      background-color: ${({theme})=> theme.COLORS.BACKGROUND_900};
+      color: ${({theme})=> theme.COLORS.GRAY_300};
+  }
   }
 .tags{
   display:flex;
@@ -68,6 +79,8 @@ height: 100vh;
       color: ${({theme})=> theme.COLORS.PINK};
     }
   }
+
+
 }
 
 `

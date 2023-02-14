@@ -2,9 +2,10 @@ import {Container} from "./styles"
 import { Link } from "react-router-dom"
 import {FiArrowLeft} from "react-icons/fi"
 import { Header } from "../../components/Header"
-import { Rating } from "../../components/Rating"
+
 import { MdAccessTime } from "react-icons/md";
 import {Tag} from "../../components/Tag"
+import { StarsRating } from "../../components/Rating";
 
 
 
@@ -19,7 +20,7 @@ export function MoviePreview(){
       </Link>
       <header>
       <h1>Interestellar</h1> 
-      <Rating/>
+      <StarsRating/>
       </header>
       <div className="subtitle">
       <img src="https://github.com/tiagoamrein.png" alt="Foto do usuario" />

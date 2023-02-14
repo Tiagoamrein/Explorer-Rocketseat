@@ -6,6 +6,9 @@ import { Link } from "react-router-dom"
 
 
 export function SignIn(){
+
+
+  
   return(
     <Container>
       <Form>
@@ -16,7 +19,7 @@ export function SignIn(){
       <Input placeholder="E-mail" type ="email" icon={FiMail}/>
       <Input placeholder="Senha" type ="password" icon={FiLock}/>
 
-      <Button title="Entrar"/>
+      <Button title="Entrar" />
 
       <Link to="/signup">
       Criar conta

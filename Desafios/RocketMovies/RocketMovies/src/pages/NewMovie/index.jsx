@@ -6,7 +6,7 @@ import {TagItem} from "../../components/TagItem"
 import { Button } from "../../components/Button";
 
 import { Textarea } from "../../components/Textarea";
-export function NewMovie(){
+export function NewMovie(...rest){
   return(
     <Container>
       <Header/>
@@ -19,7 +19,16 @@ export function NewMovie(){
       <main>
         <div className="inputs">
         <Input placeholder="Título"/>
-        <Input placeholder="Sua nota (de 0 a 5)"/>
+        <select  {...rest} onChange={e => setRating(e.target.value)}>
+        <option value="" disabled selected>Sua nota(de 0 a 5)</option>
+                <option value="0">0</option>
+                <option value="2">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+        </select>
+        
         </div>
         <Textarea placeholder="Observações"/>
 
