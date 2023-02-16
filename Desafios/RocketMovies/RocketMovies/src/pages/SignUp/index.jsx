@@ -49,7 +49,7 @@ export function SignUp(){
 
       <Button title="Cadastrar" onClick={handleSignUp} />
 
-      <Link to="/SignIn"  className="Link">
+      <Link to="/"  className="Link">
         <FiArrowLeft/>
       Voltar para o login
       </Link>
