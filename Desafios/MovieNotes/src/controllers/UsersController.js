@@ -24,7 +24,7 @@ const AppError = require('../utils/AppError')
   }
 async update (request, response){
   const {name, email, password, old_password} = request.body
-  const {id} = request.params;
+  const user_id = request.user.id;
 
     const user = await knex("users").where({ id }).first();
 
@@ -67,7 +67,7 @@ async update (request, response){
 async delete (request, response){
   const {id} = request.params
 
-  const user = await knex("users").where({ id }).delete();
+  const user_id = await knex("users").where({ id }).delete();
   
   return response.status(202).json()
 
