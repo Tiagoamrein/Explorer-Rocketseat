@@ -1,7 +1,16 @@
 import {Container,Profile} from "./styles"
 import { Input } from "../Input"
+import {useAuth} from "../../hooks/auth"
 
 export function Header(){
+
+  const {signOut} = useAuth()
+
+  function handleSignIn() {
+   
+    signOut()
+  }
+
   return(
     <Container>
       <h1>RocketMovies</h1>
@@ -9,7 +18,8 @@ export function Header(){
       
       <div className="profile">
         <h2>Tiago Santos</h2>
-        <p>Sair</p>
+
+      <button  onClick={handleSignIn}>sair</button>
         
       </div>
       <Profile to="/Profile">

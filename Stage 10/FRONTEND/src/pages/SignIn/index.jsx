@@ -15,7 +15,7 @@ export function SignIn() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const { signIn } = useAuth()
+  const {signIn } = useAuth()
 
   function handleSignIn() {
     if (!email || !password) return alert('Por favor preencha os campos de login.')

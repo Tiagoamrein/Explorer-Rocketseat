@@ -35,11 +35,15 @@ export const Container= styled.div`
     flex-direction: column;
     margin-left: 44px;
     color: ${({theme})=> theme.COLORS.WHITE};
-    p{
+    
+    button{
       color: ${({theme})=> theme.COLORS.GRAY_100};
+      border: none;
+      background: none;
+      text-align: end;
+      
     }
-   
-    p,h2{
+    h2{
     display: flex;
     justify-content:end;
     font-size: 16px;
